@@ -1,12 +1,13 @@
-var numberOfQuestions = document.querySelectorAll('.question').length;
 
-for (var i = 0; i < numberOfQuestions; i++) {
+    const questions = document.querySelectorAll(".question")
+    questions.forEach((question) => question.addEventListener("click", () =>{
+  
+        if(question.parentNode.classList.contains("active")){
+            question.parentNode.classList.toggle("active")
+        }
+    else{
+    questions.forEach(question => question.parentNode.classList.remove("active"))
+    question.parentNode.classList.add("active")
+        }
 
-    document.querySelectorAll('.question')[i].addEventListener('click', function() {
-       
-       this.parentNode.classList.toggle('active');
-
-    })
-
-}
-
+    }))
